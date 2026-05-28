@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gia Bridals — Luxury Handcrafted Wedding Gowns | Port Harcourt</title>
+<meta name="description" content="Unique hand-crafted luxury wedding gowns. Bespoke, custom, and rental. Port Harcourt, Nigeria. Worldwide delivery."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FFFFFF;--off-white:#F8F4EF;--cream:#F0E9DF;
+  --black:#0D0D0D;--charcoal:#2C2C2C;--gray:#888888;--light-gray:#E0DAD4;
+  --gold:#C9A96E;--gold-pale:#EAD9BE;--gold-deep:#A07840;
+  --nav-h:80px;--ease:cubic-bezier(.25,.46,.45,.94);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;cursor:none}
+body{font-family:'Raleway',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;cursor:none}
+
+/* ── PAGE LOADER ── */
+#loader{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .7s ease,visibility .7s ease}
+#loader.gone{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:var(--white);opacity:0;animation:fadeIn .6s ease .2s forwards}
+.loader-logo .dot{color:var(--gold)}
+.loader-bar-wrap{width:120px;height:1px;background:rgba(255,255,255,.15)}
+.loader-bar{height:100%;background:var(--gold);width:0;transition:width 1.4s var(--ease)}
+.loader-sub{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.35);opacity:0;animation:fadeIn .6s ease .4s forwards}
+
+/* ── SCROLL PROGRESS ── */
+#progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:9998;width:0%;transition:width .1s linear}
+
+/* ── CUSTOM CURSOR ── */
+#cursor{position:fixed;top:0;left:0;z-index:9997;pointer-events:none;mix-blend-mode:difference}
+.cur-ring{width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:transform .12s var(--ease),width .3s var(--ease),height .3s var(--ease),opacity .3s ease;opacity:0}
+.cur-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:transform .06s linear}
+body.cursor-ready .cur-ring{opacity:1}
+body.cursor-hover .cur-ring{width:56px;height:56px;border-color:rgba(201,169,110,.6)}
+body.cursor-click .cur-ring{width:22px;height:22px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);padding:0 64px;display:flex;align-items:center;justify-content:space-between;transition:background .55s var(--ease),box-shadow .55s var(--ease)}
+nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 1px 0 rgba(0,0,0,.07);backdrop-filter:blur(14px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--black);text-decoration:none;opacity:0;animation:fadeIn .6s ease 1.8s forwards}
+.nav-logo .dot{color:var(--gold)}
+.nav-links{display:flex;gap:36px;list-style:none;opacity:0;animation:fadeIn .6s ease 1.9s forwards}
+.nav-links li{position:relative}
+.nav-links a{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;transition:color .3s;position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease)}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-book{background:var(--black)!important;color:var(--white)!important;padding:10px 26px;transition:background .3s!important;letter-spacing:.2em}
+.nav-book::after{display:none!important}
+.nav-book:hover{background:var(--gold)!important;color:var(--white)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px}
+.hamburger span{display:block;width:22px;height:1px;background:var(--black);transition:.3s}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--off-white)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 35% 55%,#F3EBE0 0%,#E8DDD0 45%,#D8CCBD 100%);will-change:transform}
+.hero-noise{position:absolute;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+#particles{position:absolute;inset:0;pointer-events:none}
+.hero-content{position:relative;z-index:1;text-align:center;padding:0 40px;max-width:880px}
+.hero-eyebrow{font-size:.65rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;opacity:0;animation:fadeUp .8s ease 2s forwards}
+.hero-rule{width:0px;height:1px;background:var(--gold);margin:22px auto;transition:width 1s var(--ease);opacity:0;animation:ruleExpand 1s ease 2.2s forwards}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,8.5vw,7.6rem);font-weight:300;line-height:.92;letter-spacing:-.02em;color:var(--black);margin-bottom:14px}
+.hero-h1 .word{display:inline-block;overflow:hidden;vertical-align:top}
+.hero-h1 .word-inner{display:inline-block;transform:translateY(110%);opacity:0}
+.hero-h1 em{font-style:italic;color:var(--gold-deep)}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.2vw,1.65rem);font-weight:300;font-style:italic;color:var(--charcoal);margin-bottom:48px;opacity:0;animation:fadeUp 1s ease 2.8s forwards}
+.hero-ctas{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s ease 3s forwards}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeIn 1s ease 3.4s forwards}
+.hero-scroll-lbl{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gray)}
+.scroll-bar{width:1px;height:46px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite}
+
+/* ── BUTTONS ── */
+.btn-blk{background:var(--black);color:var(--white);padding:15px 40px;font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .35s,transform .25s var(--ease),box-shadow .35s;position:relative;overflow:hidden}
+.btn-blk::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-101%);transition:transform .4s var(--ease)}
+.btn-blk:hover::before{transform:none}
+.btn-blk span,.btn-blk{z-index:1}
+.btn-blk:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.btn-ghost{border:1px solid var(--charcoal);color:var(--charcoal);padding:15px 40px;font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .35s}
+.btn-ghost:hover{background:var(--charcoal);color:var(--white);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--white);padding:15px 40px;font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .35s,transform .25s;text-align:center;white-space:nowrap;position:relative;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;inset:0;background:var(--white);transform:translateX(-101%);transition:transform .4s var(--ease)}
+.btn-gold:hover::before{transform:none}
+.btn-gold:hover{color:var(--black);transform:translateY(-2px)}
+.btn-woutline{border:1px solid rgba(255,255,255,.22);color:var(--white);padding:15px 40px;font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .35s;text-align:center;white-space:nowrap}
+.btn-woutline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+/* ── SHARED ── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.22s}.reveal.d3{transition-delay:.34s}.reveal.d4{transition-delay:.46s}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .9s ease,transform .9s ease}
+.reveal-left.in{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .9s ease,transform .9s ease}
+.reveal-right.in{opacity:1;transform:none}
+.lbl{font-size:.63rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+.gold-line{width:0;height:1px;background:var(--gold);margin-bottom:28px;transition:width .9s var(--ease)}
+.gold-line.drawn{width:48px}
+.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.8vw,3.6rem);font-weight:300;line-height:1.1;color:var(--black);margin-bottom:20px}
+.sec-h em{font-style:italic}
+.sec-p{font-size:.87rem;font-weight:300;line-height:1.95;color:var(--gray)}
+section{padding:120px 80px}
+
+/* ── MANIFESTO ── */
+#manifesto{background:var(--black);padding:100px 80px;text-align:center;position:relative;overflow:hidden}
+#manifesto::before{content:'';position:absolute;inset:-50%;background:conic-gradient(from 0deg at 50% 50%,transparent 0deg,rgba(201,169,110,.04) 60deg,transparent 120deg);animation:rotateBg 20s linear infinite}
+.manifesto-q{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.2vw,2.8rem);font-weight:300;font-style:italic;color:var(--white);line-height:1.6;max-width:780px;margin:0 auto;position:relative}
+.manifesto-q .gold{color:var(--gold)}
+.manifesto-attr{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:30px;display:block;position:relative}
+
+/* ── SERVICES ── */
+#services{background:var(--white)}
+.services-header{max-width:540px;margin-bottom:64px}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.svc{background:var(--cream);padding:48px 34px;position:relative;overflow:hidden;transition:background .4s,transform .4s var(--ease)}
+.svc::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease)}
+.svc-shine{position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);transform:skewX(-20deg);transition:left .65s ease;pointer-events:none}
+.svc:hover .svc-shine{left:130%}
+.svc:hover{background:var(--off-white);transform:translateY(-4px)}
+.svc:hover::after{transform:scaleX(1)}
+.svc-n{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;color:var(--gold-pale);line-height:1;margin-bottom:22px;transition:color .3s}
+.svc:hover .svc-n{color:var(--gold)}
+.svc-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--black);margin-bottom:12px}
+.svc-desc{font-size:.8rem;font-weight:300;line-height:1.95;color:var(--gray)}
+
+/* ── COLLECTIONS ── */
+#collections{background:var(--off-white);padding:120px 0}
+.col-header{padding:0 80px;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px}
+.col-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:340px 340px;gap:10px;padding:0 80px}
+.dress-card{position:relative;overflow:hidden;cursor:none}
+.dress-card:nth-child(1){grid-row:1/3}
+.dress-card:nth-child(4){grid-column:2/4}
+.dress-ph{width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;transition:transform .95s cubic-bezier(.19,1,.22,1)}
+.dc1{background:linear-gradient(160deg,#EAE0D3 0%,#C8B89E 100%)}
+.dc2{background:linear-gradient(160deg,#E2D8CE 0%,#C0B09C 100%)}
+.dc3{background:linear-gradient(160deg,#DDD5C8 0%,#BBAC98 100%)}
+.dc4{background:linear-gradient(160deg,#D8D0C2 0%,#B8A994 100%)}
+.dress-card:hover .dress-ph{transform:scale(1.06)}
+.dress-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px 22px 20px;background:linear-gradient(to top,rgba(0,0,0,.76) 0%,transparent 100%);transform:translateY(100%);transition:transform .5s var(--ease)}
+.dress-card:hover .dress-overlay{transform:none}
+.d-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--white);margin-bottom:3px}
+.d-type{font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-pale)}
+.dress-card-tag{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:var(--gold-pale);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px;opacity:0;transform:translateY(-8px);transition:all .4s ease}
+.dress-card:hover .dress-card-tag{opacity:1;transform:none}
+.gown-svg{opacity:.18;position:absolute;bottom:20px;left:50%;transform:translateX(-50%);transition:transform .9s cubic-bezier(.19,1,.22,1)}
+.dress-card:hover .gown-svg{transform:translateX(-50%) scale(1.08)}
+
+/* ── PROCESS ── */
+#process{background:var(--white)}
+.process-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:64px;align-items:start}
+.process-steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:32px 0;border-bottom:1px solid var(--light-gray);position:relative}
+.step:first-child{padding-top:0}
+.step-progress{position:absolute;left:-2px;top:0;width:2px;height:0;background:var(--gold);transition:height .6s var(--ease)}
+.step.in .step-progress{height:100%}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--gold);line-height:1;padding-top:2px;transition:transform .4s var(--ease)}
+.step:hover .step-n{transform:scale(1.12)}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--black);margin-bottom:8px}
+.step-desc{font-size:.8rem;font-weight:300;line-height:1.95;color:var(--gray)}
+.process-visual{position:relative}
+.proc-img{width:100%;height:580px;background:linear-gradient(155deg,#EBE1D4 0%,#C9B89D 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.proc-img-inner{transition:transform .9s var(--ease);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.process-visual:hover .proc-img-inner{transform:scale(1.03)}
+.proc-badge{position:absolute;bottom:-16px;right:-16px;background:var(--gold);color:var(--white);padding:28px 24px;font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;text-align:center;line-height:1.65;max-width:148px;animation:floatBadge 4s ease-in-out infinite}
+
+/* ── SIZING ── */
+#sizing{background:var(--black);padding:80px;display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;overflow:hidden}
+#sizing::after{content:'';position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:400px;height:400px;border:1px solid rgba(201,169,110,.08);border-radius:50%;animation:expandRing 4s ease-in-out infinite}
+#sizing::before{content:'';position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:240px;height:240px;border:1px solid rgba(201,169,110,.12);border-radius:50%;animation:expandRing 4s ease-in-out 1s infinite}
+.sizing-lbl{color:var(--gold)!important}
+.sizing-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,2.9rem);font-weight:300;color:var(--white);line-height:1.18;margin-bottom:18px}
+.sizing-h em{font-style:italic;color:var(--gold)}
+.sizing-p{font-size:.85rem;font-weight:300;line-height:1.95;color:rgba(255,255,255,.52);max-width:420px}
+.sizing-btns{display:flex;flex-direction:column;gap:14px;flex-shrink:0;position:relative;z-index:1}
+
+/* ── REAL BRIDES ── */
+#brides{background:var(--off-white);padding:120px 80px}
+.brides-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px}
+.brides-masonry{columns:4;column-gap:12px}
+.bride-item{break-inside:avoid;margin-bottom:12px;position:relative;overflow:hidden;cursor:none}
+.bride-ph{display:block;width:100%;transition:transform .75s cubic-bezier(.19,1,.22,1)}
+.bp1{height:320px;background:linear-gradient(145deg,#EAE0D3,#CABB9E)}
+.bp2{height:240px;background:linear-gradient(145deg,#E0D6C9,#C0AD96)}
+.bp3{height:370px;background:linear-gradient(145deg,#EADDD0,#C8B39A)}
+.bp4{height:260px;background:linear-gradient(145deg,#DDD4C6,#BEAE98)}
+.bp5{height:200px;background:linear-gradient(145deg,#E6DDD2,#C9B9A3)}
+.bp6{height:290px;background:linear-gradient(145deg,#D9D1C4,#BBAB96)}
+.bp7{height:380px;background:linear-gradient(145deg,#E2D9CE,#C5B5A0)}
+.bp8{height:220px;background:linear-gradient(145deg,#DFDAD2,#C2B2A0)}
+.bride-item:hover .bride-ph{transform:scale(1.06)}
+.bride-tag{position:absolute;bottom:0;left:0;right:0;padding:18px 14px 14px;background:linear-gradient(to top,rgba(0,0,0,.65),transparent);opacity:0;transform:translateY(8px);transition:opacity .38s,transform .38s var(--ease);font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:var(--white)}
+.bride-item:hover .bride-tag{opacity:1;transform:none}
+
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--white);padding:120px 80px;text-align:center}
+.testi-wrap{max-width:680px;margin:60px auto 0;position:relative;min-height:220px}
+.testi-slide{position:absolute;inset:0;opacity:0;transform:translateX(30px);transition:opacity .6s ease,transform .6s var(--ease);pointer-events:none}
+.testi-slide.active{opacity:1;transform:none;pointer-events:auto;position:relative}
+.stars{color:var(--gold);font-size:.95rem;letter-spacing:5px;margin-bottom:26px}
+.testi-q{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,1.9vw,1.65rem);font-weight:300;font-style:italic;line-height:1.75;color:var(--charcoal);margin-bottom:30px}
+.testi-by{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.testi-dots{display:flex;gap:10px;justify-content:center;margin-top:44px}
+.tdot{width:5px;height:5px;background:var(--light-gray);border-radius:50%;cursor:none;transition:background .3s,transform .3s,width .3s}
+.tdot.on{background:var(--gold);transform:scale(1.4);width:22px;border-radius:3px}
+
+/* ── FAQ ── */
+#faq{background:var(--cream);padding:120px 80px}
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
+.faq-intro .sec-p{margin-top:22px}
+.faq-cta{margin-top:36px;display:inline-block}
+.faq-list{list-style:none}
+.faq-item{border-bottom:1px solid var(--light-gray)}
+.faq-item:first-child{border-top:1px solid var(--light-gray)}
+.faq-q{width:100%;background:none;border:none;padding:22px 0;display:flex;align-items:center;justify-content:space-between;cursor:none;text-align:left;gap:18px;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--black);transition:color .3s}
+.faq-q:hover{color:var(--gold)}
+.faq-ico{width:18px;height:18px;flex-shrink:0;position:relative}
+.faq-ico::before,.faq-ico::after{content:'';position:absolute;background:var(--gold);transition:transform .32s ease}
+.faq-ico::before{width:12px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-ico::after{width:1px;height:12px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-item.open .faq-ico::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.faq-item.open .faq-ans{max-height:280px}
+.faq-ans-p{font-size:.84rem;font-weight:300;line-height:1.95;color:var(--gray);padding-bottom:22px}
+
+/* ── BOOKING ── */
+#book{background:var(--off-white);padding:140px 80px;text-align:center;position:relative;overflow:hidden}
+.book-bg{position:absolute;font-family:'Cormorant Garamond',serif;font-size:20vw;font-weight:300;color:rgba(0,0,0,.032);white-space:nowrap;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;user-select:none;line-height:1;animation:floatText 8s ease-in-out infinite}
+.book-inner{position:relative;z-index:1;max-width:660px;margin:0 auto}
+.book-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,4.8vw,4.6rem);font-weight:300;line-height:1.1;margin-bottom:22px}
+.book-h em{font-style:italic}
+.book-p{font-size:.88rem;font-weight:300;line-height:1.95;color:var(--gray);margin-bottom:46px}
+.book-ctas{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.book-ring{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.book-ring::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border:1px solid rgba(201,169,110,.08);border-radius:50%;animation:expandRing 6s ease-in-out infinite}
+.book-ring::after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:900px;height:900px;border:1px solid rgba(201,169,110,.05);border-radius:50%;animation:expandRing 6s ease-in-out 2s infinite}
+
+/* ── FOOTER ── */
+footer{background:var(--black);padding:80px 80px 40px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.6fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:36px}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--white)}
+.ft-logo .dot{color:var(--gold)}
+.ft-brand-p{font-size:.8rem;font-weight:300;line-height:1.95;color:rgba(255,255,255,.42);margin-top:18px;max-width:260px}
+.ft-social{display:flex;gap:14px;margin-top:26px}
+.soc-a{width:34px;height:34px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:500;color:rgba(255,255,255,.45);text-decoration:none;transition:all .3s,transform .3s}
+.soc-a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.ft-col h4{font-size:.6rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.ft-col a{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s,transform .3s;display:inline-block}
+.ft-col a:hover{color:var(--gold);transform:translateX(4px)}
+.ft-col .ft-p{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.9;margin-bottom:8px}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:.7rem;font-weight:300;color:rgba(255,255,255,.22)}
+.ft-credit{font-size:.65rem;font-weight:300;color:rgba(255,255,255,.18);letter-spacing:.08em}
+.ft-credit a{color:rgba(201,169,110,.45);text-decoration:none;transition:color .3s}
+.ft-credit a:hover{color:var(--gold)}
+.ft-bottom-links{display:flex;gap:24px}
+.ft-bottom-links a{font-size:.7rem;color:rgba(255,255,255,.22);text-decoration:none;transition:color .3s}
+.ft-bottom-links a:hover{color:var(--gold)}
+
+/* ── WHATSAPP ── */
+.wa{position:fixed;bottom:30px;right:30px;z-index:999;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.42);transition:transform .3s var(--ease),box-shadow .3s;text-decoration:none;opacity:0;animation:fadeIn .6s ease 3.8s forwards}
+.wa:hover{transform:scale(1.14) rotate(-5deg);box-shadow:0 8px 30px rgba(37,211,102,.6)}
+.wa::after{content:'';position:absolute;inset:-4px;border:2px solid rgba(37,211,102,.3);border-radius:50%;animation:waPulse 2.5s ease-in-out infinite}
+.wa svg{width:26px;height:26px;fill:#fff;position:relative;z-index:1}
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes ruleExpand{from{opacity:0;width:0}to{opacity:1;width:56px}}
+@keyframes rotateBg{to{transform:rotate(360deg)}}
+@keyframes expandRing{0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1)}50%{opacity:.4;transform:translate(-50%,-50%) scale(1.08)}}
+@keyframes floatBadge{0%,100%{transform:none}50%{transform:translateY(-6px)}}
+@keyframes floatText{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-52%)}}
+@keyframes waPulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.35);opacity:0}}
+@keyframes particleFade{0%{opacity:0;transform:translateY(0) scale(0)}20%{opacity:.7}80%{opacity:.3}100%{opacity:0;transform:translateY(-120px) scale(.3)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  nav{padding:0 36px}
+  section{padding:90px 40px}
+  .col-header{padding:0 40px}
+  .col-grid{padding:0 40px;grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .col-grid .dress-card:nth-child(1){grid-row:auto}
+  .col-grid .dress-card:nth-child(1) .dress-ph,.dress-ph{height:280px!important}
+  .col-grid .dress-card:nth-child(4){grid-column:auto}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .process-layout{grid-template-columns:1fr}
+  .proc-img{height:440px}
+  .faq-grid{grid-template-columns:1fr}
+  #sizing{flex-direction:column;text-align:center;padding:70px 40px}
+  .sizing-p{max-width:100%}
+  .ft-top{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media(max-width:768px){
+  html,body{cursor:auto}
+  #cursor{display:none}
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .hamburger{display:flex;cursor:pointer}
+  section{padding:72px 24px}
+  .col-header{padding:0 24px;flex-direction:column;align-items:flex-start;gap:20px}
+  .col-grid{padding:0 24px;grid-template-columns:1fr;grid-template-rows:auto}
+  .col-grid .dress-card:nth-child(4){grid-column:auto}
+  .dress-ph{height:300px!important}
+  .brides-masonry{columns:2}
+  #sizing{padding:60px 24px}
+  footer{padding:60px 24px 36px}
+  .ft-top{grid-template-columns:1fr;gap:36px}
+  .ft-bottom{flex-direction:column;gap:14px;text-align:center}
+  .ft-bottom-links{gap:18px}
+  #manifesto{padding:72px 24px}
+  #book{padding:100px 24px}
+  .book-ring::before,.book-ring::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div id="loader">
+  <div class="loader-logo">Gia<span class="dot">·</span>Bridals</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="lbar"></div></div>
+  <div class="loader-sub">Luxury Bridal · Port Harcourt</div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="progress"></div>
+
+<!-- CUSTOM CURSOR -->
+<div id="cursor">
+  <div class="cur-dot" id="curDot"></div>
+  <div class="cur-ring" id="curRing"></div>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Gia<span class="dot">·</span>Bridals</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#process">Our Process</a></li>
+    <li><a href="#brides">Real Brides</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#book" class="nav-book">Book a Fitting</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-noise"></div>
+  <canvas id="particles"></canvas>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Port Harcourt, Nigeria &nbsp;·&nbsp; Est. in Love</span>
+    <div class="hero-rule"></div>
+    <h1 class="hero-h1" id="heroTitle">
+      <span class="word"><span class="word-inner">Every</span></span>&#32;<span class="word"><span class="word-inner">Bride</span></span><br>
+      <em><span class="word"><span class="word-inner">Deserves</span></span></em><br>
+      <span class="word"><span class="word-inner">to</span></span>&#32;<span class="word"><span class="word-inner">Shine</span></span>
+    </h1>
+    <p class="hero-sub">Unique hand-crafted luxury wedding gowns, made for you alone</p>
+    <div class="hero-ctas">
+      <a href="#book" class="btn-blk">Book a Fitting</a>
+      <a href="#collections" class="btn-ghost">View Collection</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-lbl">Scroll</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<div id="manifesto">
+  <blockquote class="manifesto-q reveal">
+    "Every gown we craft is a <span class="gold">love letter</span> — sewn bead by bead, stitch by stitch, until it becomes the most important dress you will ever wear."
+  </blockquote>
+  <span class="manifesto-attr reveal d1">— The Gia Bridals Promise</span>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <span class="lbl">What We Offer</span>
+    <div class="gold-line"></div>
+    <h2 class="sec-h">A Complete <em>Bridal</em> Experience</h2>
+    <p class="sec-p">From a gown conceived just for you to a rental that fits your vision — every service is delivered with meticulous craft and luxury care.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc reveal d1"><div class="svc-shine"></div>
+      <div class="svc-n">01</div>
+      <h3 class="svc-title">Bespoke Gowns</h3>
+      <p class="svc-desc">Your vision, built from scratch. We consult, sketch, source fabrics, and hand-craft a wedding gown entirely unique to you — your silhouette, your story.</p>
+    </div>
+    <div class="svc reveal d2"><div class="svc-shine"></div>
+      <div class="svc-n">02</div>
+      <h3 class="svc-title">Custom Orders</h3>
+      <p class="svc-desc">Choose a signature design and we personalize every detail — fabric, embellishments, cut, structure, and fit — until it is completely yours.</p>
+    </div>
+    <div class="svc reveal d3"><div class="svc-shine"></div>
+      <div class="svc-n">03</div>
+      <h3 class="svc-title">Rental Collection</h3>
+      <p class="svc-desc">Wear luxury without the full investment. Our curated rental gowns are impeccably maintained, available in a range of silhouettes and sizes.</p>
+    </div>
+    <div class="svc reveal d4"><div class="svc-shine"></div>
+      <div class="svc-n">04</div>
+      <h3 class="svc-title">Worldwide Delivery</h3>
+      <p class="svc-desc">Your gown delivered wherever you are — full tracking, secure packaging, and care from Port Harcourt to the world.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="col-header">
+    <div class="reveal-left">
+      <span class="lbl">Signature Gowns</span>
+      <div class="gold-line"></div>
+      <h2 class="sec-h">The <em>Collection</em></h2>
+    </div>
+    <div class="reveal-right"><a href="#book" class="btn-ghost">Request a Gown</a></div>
+  </div>
+  <div class="col-grid reveal">
+    <div class="dress-card">
+      <div class="dress-ph dc1" style="height:100%">
+        <svg class="gown-svg" width="90" height="180" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C31 36 10 60 4 100C0 130 2 165 2 200L88 200C88 165 90 130 86 100C80 60 59 36 59 36C59 36 54 45 45 45C36 45 31 36 31 36Z" fill="#8B7355"/></svg>
+      </div>
+      <div class="dress-card-tag">Bespoke</div>
+      <div class="dress-overlay"><div class="d-name">Tumini</div><div class="d-type">Asymmetrical Lace · One Shoulder</div></div>
+    </div>
+    <div class="dress-card">
+      <div class="dress-ph dc2">
+        <svg class="gown-svg" width="72" height="144" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C31 36 10 60 4 100C0 130 2 165 2 200L88 200C88 165 90 130 86 100C80 60 59 36 59 36C59 36 54 45 45 45C36 45 31 36 31 36Z" fill="#8B7355"/></svg>
+      </div>
+      <div class="dress-card-tag">Custom</div>
+      <div class="dress-overlay"><div class="d-name">Ada</div><div class="d-type">Mikado Silk Ball Gown · Crystal Lace</div></div>
+    </div>
+    <div class="dress-card">
+      <div class="dress-ph dc3">
+        <svg class="gown-svg" width="72" height="144" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C18 55 8 80 4 110C0 140 2 175 2 200L88 200C88 175 90 140 86 110C82 80 72 55 59 36C59 36 54 46 45 46C36 46 31 36 31 36Z" fill="#8B7355"/></svg>
+      </div>
+      <div class="dress-card-tag">Rental</div>
+      <div class="dress-overlay"><div class="d-name">Amara</div><div class="d-type">Cathedral Train · A-Line</div></div>
+    </div>
+    <div class="dress-card">
+      <div class="dress-ph dc4" style="height:100%">
+        <svg class="gown-svg" width="90" height="180" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M38 36C38 36 24 55 20 80C16 105 18 145 24 200L66 200C72 145 74 105 70 80C66 55 52 36 52 36C52 36 50 46 45 46C40 46 38 36 38 36Z" fill="#8B7355"/></svg>
+      </div>
+      <div class="dress-card-tag">Bespoke</div>
+      <div class="dress-overlay"><div class="d-name">Chisom</div><div class="d-type">Mermaid Silhouette · Hand Beaded</div></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;margin-top:40px;padding:0 80px" class="reveal">
+    <a href="#book" class="btn-blk">Request the Full Lookbook</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal">
+    <span class="lbl">How It Works</span>
+    <div class="gold-line"></div>
+    <h2 class="sec-h">Your Journey to<br><em>The Perfect Gown</em></h2>
+  </div>
+  <div class="process-layout">
+    <div class="process-steps">
+      <div class="step reveal d1">
+        <div class="step-progress"></div>
+        <div class="step-n">01</div>
+        <div><h4 class="step-title">Consultation</h4><p class="step-desc">Book a session — in-person in Port Harcourt or virtual for international brides. We listen to your vision, wedding theme, silhouette preferences, and budget. No pressure, all love.</p></div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-progress"></div>
+        <div class="step-n">02</div>
+        <div><h4 class="step-title">Design & Measurements</h4><p class="step-desc">We take precise measurements and produce a custom design sketch. Every detail — fabric, beadwork, neckline, structure — is confirmed before we cut a single thread.</p></div>
+      </div>
+      <div class="step reveal d3">
+        <div class="step-progress"></div>
+        <div class="step-n">03</div>
+        <div><h4 class="step-title">Crafting Your Gown</h4><p class="step-desc">Our artisans hand-craft your gown with meticulous care. Each bead placed, each seam perfected. We send you progress updates at key milestones throughout.</p></div>
+      </div>
+      <div class="step reveal d4">
+        <div class="step-progress"></div>
+        <div class="step-n">04</div>
+        <div><h4 class="step-title">Final Fitting & Delivery</h4><p class="step-desc">A final fitting confirms perfect fit. Your gown is then delivered — locally or internationally — professionally packaged, tracked, and handled with care.</p></div>
+      </div>
+    </div>
+    <div class="process-visual reveal-right">
+      <div class="proc-img"><div class="proc-img-inner">
+        <svg width="100" height="200" viewBox="0 0 90 200" fill="none" style="opacity:.22"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C31 36 10 60 4 100C0 130 2 165 2 200L88 200C88 165 90 130 86 100C80 60 59 36 59 36C59 36 54 45 45 45C36 45 31 36 31 36Z" fill="#8B7355"/></svg>
+      </div></div>
+      <div class="proc-badge">Hand-crafted<br>with Love<br>in Port Harcourt</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIZING -->
+<div id="sizing">
+  <div class="reveal">
+    <span class="lbl sizing-lbl">Sizing & Measurements</span>
+    <div class="gold-line"></div>
+    <h2 class="sizing-h">The Perfect <em>Fit</em><br>Starts Here</h2>
+    <p class="sizing-p">Bridal sizing runs differently from everyday fashion — a street size 10 may be a bridal 14. For bespoke and custom orders, we work from your exact measurements. We'll guide you through every step.</p>
+  </div>
+  <div class="sizing-btns reveal d2">
+    <a href="#book" class="btn-gold">Book a Measurement Session</a>
+    <a href="#faq" class="btn-woutline">How Our Sizing Works</a>
+  </div>
+</div>
+
+<!-- REAL BRIDES -->
+<section id="brides">
+  <div class="brides-header">
+    <div class="reveal-left">
+      <span class="lbl">Real Brides</span>
+      <div class="gold-line"></div>
+      <h2 class="sec-h">Worn with <em>Love</em></h2>
+    </div>
+    <div class="reveal-right"><a href="https://www.instagram.com/giabridals" target="_blank" rel="noopener" class="btn-ghost">See All on Instagram</a></div>
+  </div>
+  <div class="brides-masonry reveal">
+    <div class="bride-item"><div class="bride-ph bp1"></div><div class="bride-tag">Ada Gown · Port Harcourt</div></div>
+    <div class="bride-item"><div class="bride-ph bp2"></div><div class="bride-tag">Tumini · Lagos</div></div>
+    <div class="bride-item"><div class="bride-ph bp3"></div><div class="bride-tag">Chisom · Abuja</div></div>
+    <div class="bride-item"><div class="bride-ph bp4"></div><div class="bride-tag">Bespoke · London, UK</div></div>
+    <div class="bride-item"><div class="bride-ph bp5"></div><div class="bride-tag">Amara · Port Harcourt</div></div>
+    <div class="bride-item"><div class="bride-ph bp6"></div><div class="bride-tag">Custom · Houston, USA</div></div>
+    <div class="bride-item"><div class="bride-ph bp7"></div><div class="bride-tag">Rental · Port Harcourt</div></div>
+    <div class="bride-item"><div class="bride-ph bp8"></div><div class="bride-tag">Bespoke · Toronto, CA</div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="reveal" style="text-align:center">
+    <span class="lbl" style="display:block;margin-bottom:14px">Bride Stories</span>
+    <div class="gold-line" style="margin:0 auto 28px"></div>
+    <h2 class="sec-h">What Our <em>Brides</em> Say</h2>
+  </div>
+  <div class="testi-wrap reveal">
+    <div class="testi-slide active">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <p class="testi-q">"I've never felt more beautiful in my life. The gown they created for me was beyond anything I imagined — every bead, every stitch was absolute perfection. Gia Bridals didn't just make my dress, they made my entire day."</p>
+      <span class="testi-by">— Adaeze O. &nbsp;·&nbsp; Port Harcourt</span>
+    </div>
+    <div class="testi-slide">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <p class="testi-q">"As an international bride ordering from the UK, I was nervous. Their process was seamless — virtual consultation, remote measurements, progress updates. The gown arrived flawlessly. 100% worth every penny."</p>
+      <span class="testi-by">— Chidinma E. &nbsp;·&nbsp; London, UK</span>
+    </div>
+    <div class="testi-slide">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <p class="testi-q">"I rented the Amara gown and my guests were convinced it was bespoke. The quality, the fit, the service — all exceptional. Gia Bridals made me feel like royalty on a real budget."</p>
+      <span class="testi-by">— Ngozi M. &nbsp;·&nbsp; Lagos</span>
+    </div>
+    <div class="testi-slide">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <p class="testi-q">"From the first consultation to my final fitting, I felt completely seen and heard. When I put on my Tumini gown for the first time, I cried. That is all you need to know about Gia Bridals."</p>
+      <span class="testi-by">— Blessing A. &nbsp;·&nbsp; Abuja</span>
+    </div>
+  </div>
+  <div class="testi-dots reveal">
+    <div class="tdot on" data-i="0"></div>
+    <div class="tdot" data-i="1"></div>
+    <div class="tdot" data-i="2"></div>
+    <div class="tdot" data-i="3"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-grid">
+    <div class="faq-intro reveal-left">
+      <span class="lbl">Got Questions?</span>
+      <div class="gold-line"></div>
+      <h2 class="sec-h">Everything You<br>Need to <em>Know</em></h2>
+      <p class="sec-p">Can't find your answer? Reach us on WhatsApp or book a free consultation — we're happy to walk you through every step.</p>
+      <a href="https://wa.me/2340000000000" target="_blank" class="btn-blk faq-cta">Chat on WhatsApp</a>
+    </div>
+    <ul class="faq-list reveal-right">
+      <li class="faq-item"><button class="faq-q">How far in advance should I order my gown?<div class="faq-ico"></div></button><div class="faq-ans"><p class="faq-ans-p">We recommend ordering at least 4–6 months before your wedding day for bespoke and custom gowns. This ensures enough time for design, crafting, fittings, and any final alterations. Rush orders may be available — contact us to discuss your timeline.</p></div></li>
+      <li class="faq-item"><button class="faq-q">How does bridal sizing work?<div class="faq-ico"></div></button><div class="faq-ans"><p class="faq-ans-p">Bridal sizing runs larger than everyday fashion — a street size 10 can be a bridal size 14 or 16. For bespoke and custom gowns, we work entirely from your actual measurements, so the tag number is irrelevant. We provide a full measurement guide before you order.</p></div></li>
+      <li class="faq-item"><button class="faq-q">How does the rental process work?<div class="faq-ico"></div></button><div class="faq-ans"><p class="faq-ans-p">Browse our rental collection, book a fitting, and reserve your gown with a deposit. Rentals are typically available for 3–5 days. A refundable damage deposit is required. Minor alterations can be arranged. Returns must be clean and undamaged.</p></div></li>
+      <li class="faq-item"><button class="faq-q">Do you deliver internationally?<div class="faq-ico"></div></button><div class="faq-ans"><p class="faq-ans-p">Yes — we deliver worldwide. We've delivered to brides in the UK, USA, Canada, and across Africa. All gowns are professionally packaged and shipped with full tracking. Contact us for a delivery quote to your location.</p></div></li>
+      <li class="faq-item"><button class="faq-q">Can I book a virtual consultation?<div class="faq-ico"></div></button><div class="faq-ans"><p class="faq-ans-p">Absolutely. We offer virtual consultations via video call for brides outside Port Harcourt and all international clients. Share inspiration images, we share design sketches and fabric options, and guide you through accurate measurements from home.</p></div></li>
+      <li class="faq-item"><button class="faq-q">What is your payment structure?<div class="faq-ico"></div></button><div class="faq-ans"><p class="faq-ans-p">We require a 50% deposit to begin production, with the balance due before delivery. We accept bank transfer (Nigeria), international wire transfer, and mobile money. All payment terms are confirmed in writing before work begins.</p></div></li>
+      <li class="faq-item"><button class="faq-q">What is your return and alteration policy?<div class="faq-ico"></div></button><div class="faq-ans"><p class="faq-ans-p">Because every bespoke and custom gown is made to order for you, we do not offer refunds. We include one round of alterations at no extra cost in the final fitting stage. Significant changes requested after production begins may incur additional charges, discussed upfront.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="book">
+  <div class="book-ring"></div>
+  <div class="book-bg">Gia</div>
+  <div class="book-inner reveal">
+    <span class="lbl" style="display:block;margin-bottom:14px">Begin Your Journey</span>
+    <div class="gold-line" style="margin:0 auto 32px"></div>
+    <h2 class="book-h">You Deserve to Be<br>the Most <em>Beautiful</em><br>Bride in the Room</h2>
+    <p class="book-p">Book a free consultation — in-person in Port Harcourt or virtual from anywhere in the world. We'll talk about your dream dress and how we'll make it happen.</p>
+    <div class="book-ctas">
+      <a href="https://wa.me/2340000000000" target="_blank" rel="noopener" class="btn-blk">Book via WhatsApp</a>
+      <a href="mailto:hello@giabridals.com" class="btn-ghost">Send an Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="reveal">
+      <div class="ft-logo">Gia<span class="dot">·</span>Bridals</div>
+      <p class="ft-brand-p">Luxury handcrafted wedding gowns — bespoke, custom, and rental — made for every bride who deserves to feel extraordinary on her most important day. Port Harcourt to the world.</p>
+      <div class="ft-social">
+        <a href="https://www.instagram.com/giabridals" target="_blank" rel="noopener" class="soc-a" aria-label="Instagram">IG</a>
+        <a href="https://www.tiktok.com/@giabridals" target="_blank" rel="noopener" class="soc-a" aria-label="TikTok">TK</a>
+        <a href="https://wa.me/2340000000000" target="_blank" rel="noopener" class="soc-a" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+    <div class="ft-col reveal d1">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Bespoke Gowns</a></li>
+        <li><a href="#services">Custom Orders</a></li>
+        <li><a href="#services">Rental Collection</a></li>
+        <li><a href="#services">Worldwide Delivery</a></li>
+      </ul>
+    </div>
+    <div class="ft-col reveal d2">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#brides">Real Brides</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#book">Book a Fitting</a></li>
+      </ul>
+    </div>
+    <div class="ft-col reveal d3">
+      <h4>Contact</h4>
+      <p class="ft-p">Port Harcourt, Rivers State, Nigeria</p>
+      <p class="ft-p"><a href="mailto:hello@giabridals.com">hello@giabridals.com</a></p>
+      <p class="ft-p"><a href="https://wa.me/2340000000000">WhatsApp Us</a></p>
+      <p class="ft-p"><a href="https://www.instagram.com/giabridals" target="_blank">@giabridals</a></p>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2025 Gia Bridals. All rights reserved.</span>
+    <span class="ft-credit">Designed &amp; built by <a href="https://victorvandi.com" target="_blank" rel="noopener">victorvandi.com</a></span>
+    <div class="ft-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Shipping Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/2340000000000" target="_blank" rel="noopener" class="wa" title="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+// ── PAGE LOADER ──
+const loader=document.getElementById('loader');
+const lbar=document.getElementById('lbar');
+setTimeout(()=>lbar.style.width='100%',100);
+setTimeout(()=>{loader.classList.add('gone');startWordAnim()},1800);
+
+// ── HERO WORD ANIMATION ──
+function startWordAnim(){
+  const words=document.querySelectorAll('.word-inner');
+  words.forEach((w,i)=>{
+    setTimeout(()=>{
+      w.style.transition='transform .75s cubic-bezier(.19,1,.22,1), opacity .6s ease';
+      w.style.transform='none';
+      w.style.opacity='1';
+    },2200+i*120);
+  });
+}
+
+// ── SCROLL PROGRESS ──
+const prog=document.getElementById('progress');
+function updateProgress(){
+  const h=document.documentElement.scrollHeight-innerHeight;
+  prog.style.width=(scrollY/h*100)+'%';
+}
+window.addEventListener('scroll',updateProgress,{passive:true});
+
+// ── NAV SCROLL ──
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+
+// ── HERO PARALLAX ──
+const heroBg=document.getElementById('heroBg');
+window.addEventListener('scroll',()=>{
+  if(scrollY<innerHeight)heroBg.style.transform=`translateY(${scrollY*.35}px)`;
+},{passive:true});
+
+// ── CUSTOM CURSOR ──
+const curDot=document.getElementById('curDot');
+const curRing=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  curDot.style.left=mx+'px';curDot.style.top=my+'px';
+  document.body.classList.add('cursor-ready');
+});
+function animRing(){
+  rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+  curRing.style.left=rx+'px';curRing.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+}animRing();
+document.addEventListener('mousedown',()=>document.body.classList.add('cursor-click'));
+document.addEventListener('mouseup',()=>document.body.classList.remove('cursor-click'));
+document.querySelectorAll('a,button,.svc,.dress-card,.bride-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+});
+
+// ── HERO PARTICLES ──
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+let particles=[];
+function resizeCanvas(){canvas.width=innerWidth;canvas.height=innerHeight}
+resizeCanvas();window.addEventListener('resize',resizeCanvas);
+function spawnParticle(){
+  particles.push({
+    x:Math.random()*canvas.width,y:canvas.height*(.4+Math.random()*.4),
+    r:Math.random()*2+.5,life:0,maxLife:120+Math.random()*80,
+    vx:(Math.random()-.5)*.4,vy:-(Math.random()*.6+.3),
+    color:`rgba(201,169,110,${Math.random()*.5+.2})`
+  });
+}
+function drawParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  if(Math.random()<.08)spawnParticle();
+  particles=particles.filter(p=>{
+    p.life++;p.x+=p.vx;p.y+=p.vy;
+    const progress=p.life/p.maxLife;
+    const alpha=progress<.2?progress/.2:progress>.8?(1-progress)/.2:1;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.color.replace(/[\d.]+\)$/,`${alpha*.6})`);
+    ctx.fill();
+    return p.life<p.maxLife;
+  });
+  requestAnimationFrame(drawParticles);
+}
+setTimeout(drawParticles,1800);
+
+// ── SCROLL REVEAL ──
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      const gl=e.target.querySelector('.gold-line');
+      if(gl)setTimeout(()=>gl.classList.add('drawn'),200);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>io.observe(el));
+// Also observe standalone gold-lines
+document.querySelectorAll('.gold-line').forEach(gl=>{
+  const io2=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('drawn');io2.unobserve(e.target)}});
+  },{threshold:.5});
+  io2.observe(gl);
+});
+// Step progress lines
+const stepObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');stepObs.unobserve(e.target)}});
+},{threshold:.3});
+document.querySelectorAll('.step').forEach(s=>stepObs.observe(s));
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+
+// ── TESTIMONIAL SLIDER ──
+const slides=document.querySelectorAll('.testi-slide');
+const dots=document.querySelectorAll('.tdot');
+let cur=0,auto;
+function goTo(n){
+  slides[cur].classList.remove('active');dots[cur].classList.remove('on');
+  cur=n;
+  slides[cur].classList.add('active');dots[cur].classList.add('on');
+}
+dots.forEach(d=>d.addEventListener('click',()=>{clearInterval(auto);goTo(+d.dataset.i);startAuto()}));
+function startAuto(){auto=setInterval(()=>goTo((cur+1)%slides.length),5400)}
+startAuto();
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'})}
+  });
+});
+
+// ── CARD TILT (desktop) ──
+if(matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.dress-card,.svc').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(800px) rotateY(${x*8}deg) rotateX(${-y*6}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+}
+</script>
+</body>
+</html>
