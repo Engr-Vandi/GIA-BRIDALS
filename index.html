@@ -57,18 +57,19 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 1px 0 rgba(0,0,0,.07)
 .hamburger span{display:block;width:22px;height:1px;background:var(--black);transition:.3s}
 
 /* ── HERO ── */
-#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--off-white)}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 35% 55%,#F3EBE0 0%,#E8DDD0 45%,#D8CCBD 100%);will-change:transform}
-.hero-noise{position:absolute;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--black)}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1529635322560-e767888a1583?w=1800&q=85&auto=format&fit=crop');background-size:cover;background-position:center 30%;will-change:transform}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(240,233,223,.78) 0%,rgba(210,195,175,.55) 50%,rgba(13,13,13,.35) 100%)}
+.hero-noise{display:none}
 #particles{position:absolute;inset:0;pointer-events:none}
 .hero-content{position:relative;z-index:1;text-align:center;padding:0 40px;max-width:880px}
-.hero-eyebrow{font-size:.65rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;opacity:0;animation:fadeUp .8s ease 2s forwards}
+.hero-eyebrow{font-size:.65rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;opacity:0;animation:fadeUp .8s ease 2s forwards;text-shadow:0 1px 8px rgba(0,0,0,.18)}
 .hero-rule{width:0px;height:1px;background:var(--gold);margin:22px auto;transition:width 1s var(--ease);opacity:0;animation:ruleExpand 1s ease 2.2s forwards}
-.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,8.5vw,7.6rem);font-weight:300;line-height:.92;letter-spacing:-.02em;color:var(--black);margin-bottom:14px}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,8.5vw,7.6rem);font-weight:300;line-height:.92;letter-spacing:-.02em;color:var(--black);margin-bottom:14px;text-shadow:0 2px 24px rgba(240,233,223,.6)}
 .hero-h1 .word{display:inline-block;overflow:hidden;vertical-align:top}
 .hero-h1 .word-inner{display:inline-block;transform:translateY(110%);opacity:0}
 .hero-h1 em{font-style:italic;color:var(--gold-deep)}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.2vw,1.65rem);font-weight:300;font-style:italic;color:var(--charcoal);margin-bottom:48px;opacity:0;animation:fadeUp 1s ease 2.8s forwards}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.2vw,1.65rem);font-weight:300;font-style:italic;color:var(--charcoal);margin-bottom:48px;opacity:0;animation:fadeUp 1s ease 2.8s forwards;text-shadow:0 1px 8px rgba(240,233,223,.5)}
 .hero-ctas{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s ease 3s forwards}
 .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeIn 1s ease 3.4s forwards}
 .hero-scroll-lbl{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gray)}
@@ -135,10 +136,6 @@ section{padding:120px 80px}
 .dress-card:nth-child(1){grid-row:1/3}
 .dress-card:nth-child(4){grid-column:2/4}
 .dress-ph{width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;transition:transform .95s cubic-bezier(.19,1,.22,1)}
-.dc1{background:linear-gradient(160deg,#EAE0D3 0%,#C8B89E 100%)}
-.dc2{background:linear-gradient(160deg,#E2D8CE 0%,#C0B09C 100%)}
-.dc3{background:linear-gradient(160deg,#DDD5C8 0%,#BBAC98 100%)}
-.dc4{background:linear-gradient(160deg,#D8D0C2 0%,#B8A994 100%)}
 .dress-card:hover .dress-ph{transform:scale(1.06)}
 .dress-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px 22px 20px;background:linear-gradient(to top,rgba(0,0,0,.76) 0%,transparent 100%);transform:translateY(100%);transition:transform .5s var(--ease)}
 .dress-card:hover .dress-overlay{transform:none}
@@ -146,8 +143,6 @@ section{padding:120px 80px}
 .d-type{font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-pale)}
 .dress-card-tag{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:var(--gold-pale);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px;opacity:0;transform:translateY(-8px);transition:all .4s ease}
 .dress-card:hover .dress-card-tag{opacity:1;transform:none}
-.gown-svg{opacity:.18;position:absolute;bottom:20px;left:50%;transform:translateX(-50%);transition:transform .9s cubic-bezier(.19,1,.22,1)}
-.dress-card:hover .gown-svg{transform:translateX(-50%) scale(1.08)}
 
 /* ── PROCESS ── */
 #process{background:var(--white)}
@@ -162,9 +157,9 @@ section{padding:120px 80px}
 .step-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--black);margin-bottom:8px}
 .step-desc{font-size:.8rem;font-weight:300;line-height:1.95;color:var(--gray)}
 .process-visual{position:relative}
-.proc-img{width:100%;height:580px;background:linear-gradient(155deg,#EBE1D4 0%,#C9B89D 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.proc-img{width:100%;height:580px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
 .proc-img-inner{transition:transform .9s var(--ease);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-.process-visual:hover .proc-img-inner{transform:scale(1.03)}
+.process-visual:hover .proc-img-inner{transform:scale(1.04)}
 .proc-badge{position:absolute;bottom:-16px;right:-16px;background:var(--gold);color:var(--white);padding:28px 24px;font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;text-align:center;line-height:1.65;max-width:148px;animation:floatBadge 4s ease-in-out infinite}
 
 /* ── SIZING ── */
@@ -183,14 +178,6 @@ section{padding:120px 80px}
 .brides-masonry{columns:4;column-gap:12px}
 .bride-item{break-inside:avoid;margin-bottom:12px;position:relative;overflow:hidden;cursor:none}
 .bride-ph{display:block;width:100%;transition:transform .75s cubic-bezier(.19,1,.22,1)}
-.bp1{height:320px;background:linear-gradient(145deg,#EAE0D3,#CABB9E)}
-.bp2{height:240px;background:linear-gradient(145deg,#E0D6C9,#C0AD96)}
-.bp3{height:370px;background:linear-gradient(145deg,#EADDD0,#C8B39A)}
-.bp4{height:260px;background:linear-gradient(145deg,#DDD4C6,#BEAE98)}
-.bp5{height:200px;background:linear-gradient(145deg,#E6DDD2,#C9B9A3)}
-.bp6{height:290px;background:linear-gradient(145deg,#D9D1C4,#BBAB96)}
-.bp7{height:380px;background:linear-gradient(145deg,#E2D9CE,#C5B5A0)}
-.bp8{height:220px;background:linear-gradient(145deg,#DFDAD2,#C2B2A0)}
 .bride-item:hover .bride-ph{transform:scale(1.06)}
 .bride-tag{position:absolute;bottom:0;left:0;right:0;padding:18px 14px 14px;background:linear-gradient(to top,rgba(0,0,0,.65),transparent);opacity:0;transform:translateY(8px);transition:opacity .38s,transform .38s var(--ease);font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:var(--white)}
 .bride-item:hover .bride-tag{opacity:1;transform:none}
@@ -356,6 +343,7 @@ footer{background:var(--black);padding:80px 80px 40px}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-noise"></div>
   <canvas id="particles"></canvas>
   <div class="hero-content">
@@ -430,30 +418,22 @@ footer{background:var(--black);padding:80px 80px 40px}
   </div>
   <div class="col-grid reveal">
     <div class="dress-card">
-      <div class="dress-ph dc1" style="height:100%">
-        <svg class="gown-svg" width="90" height="180" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C31 36 10 60 4 100C0 130 2 165 2 200L88 200C88 165 90 130 86 100C80 60 59 36 59 36C59 36 54 45 45 45C36 45 31 36 31 36Z" fill="#8B7355"/></svg>
-      </div>
+      <div class="dress-ph" style="height:100%;background-image:url('https://images.unsplash.com/photo-1611351669873-fc83d3fd5cbf?w=700&q=80&auto=format&fit=crop&crop=top');background-size:cover;background-position:center top"></div>
       <div class="dress-card-tag">Bespoke</div>
       <div class="dress-overlay"><div class="d-name">Tumini</div><div class="d-type">Asymmetrical Lace · One Shoulder</div></div>
     </div>
     <div class="dress-card">
-      <div class="dress-ph dc2">
-        <svg class="gown-svg" width="72" height="144" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C31 36 10 60 4 100C0 130 2 165 2 200L88 200C88 165 90 130 86 100C80 60 59 36 59 36C59 36 54 45 45 45C36 45 31 36 31 36Z" fill="#8B7355"/></svg>
-      </div>
+      <div class="dress-ph" style="background-image:url('https://images.unsplash.com/photo-1542764824-4cdbd6c92dbe?w=600&q=80&auto=format&fit=crop&crop=top');background-size:cover;background-position:center top"></div>
       <div class="dress-card-tag">Custom</div>
       <div class="dress-overlay"><div class="d-name">Ada</div><div class="d-type">Mikado Silk Ball Gown · Crystal Lace</div></div>
     </div>
     <div class="dress-card">
-      <div class="dress-ph dc3">
-        <svg class="gown-svg" width="72" height="144" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C18 55 8 80 4 110C0 140 2 175 2 200L88 200C88 175 90 140 86 110C82 80 72 55 59 36C59 36 54 46 45 46C36 46 31 36 31 36Z" fill="#8B7355"/></svg>
-      </div>
+      <div class="dress-ph" style="background-image:url('https://images.unsplash.com/photo-1545454717-c8d0a038d0a6?w=600&q=80&auto=format&fit=crop&crop=top');background-size:cover;background-position:center top"></div>
       <div class="dress-card-tag">Rental</div>
       <div class="dress-overlay"><div class="d-name">Amara</div><div class="d-type">Cathedral Train · A-Line</div></div>
     </div>
     <div class="dress-card">
-      <div class="dress-ph dc4" style="height:100%">
-        <svg class="gown-svg" width="90" height="180" viewBox="0 0 90 200" fill="none"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M38 36C38 36 24 55 20 80C16 105 18 145 24 200L66 200C72 145 74 105 70 80C66 55 52 36 52 36C52 36 50 46 45 46C40 46 38 36 38 36Z" fill="#8B7355"/></svg>
-      </div>
+      <div class="dress-ph" style="height:100%;background-image:url('https://images.unsplash.com/photo-1588436199517-f2b12041a7cc?w=900&q=80&auto=format&fit=crop&crop=center');background-size:cover;background-position:center"></div>
       <div class="dress-card-tag">Bespoke</div>
       <div class="dress-overlay"><div class="d-name">Chisom</div><div class="d-type">Mermaid Silhouette · Hand Beaded</div></div>
     </div>
@@ -494,8 +474,7 @@ footer{background:var(--black);padding:80px 80px 40px}
       </div>
     </div>
     <div class="process-visual reveal-right">
-      <div class="proc-img"><div class="proc-img-inner">
-        <svg width="100" height="200" viewBox="0 0 90 200" fill="none" style="opacity:.22"><ellipse cx="45" cy="18" rx="14" ry="18" fill="#8B7355"/><path d="M31 36C31 36 10 60 4 100C0 130 2 165 2 200L88 200C88 165 90 130 86 100C80 60 59 36 59 36C59 36 54 45 45 45C36 45 31 36 31 36Z" fill="#8B7355"/></svg>
+      <div class="proc-img"><div class="proc-img-inner" style="background-image:url('https://images.unsplash.com/photo-1517067729228-9fba1145bb3d?w=700&q=85&auto=format&fit=crop&crop=center');background-size:cover;background-position:center;width:100%;height:100%">
       </div></div>
       <div class="proc-badge">Hand-crafted<br>with Love<br>in Port Harcourt</div>
     </div>
@@ -527,14 +506,14 @@ footer{background:var(--black);padding:80px 80px 40px}
     <div class="reveal-right"><a href="https://www.instagram.com/giabridals" target="_blank" rel="noopener" class="btn-ghost">See All on Instagram</a></div>
   </div>
   <div class="brides-masonry reveal">
-    <div class="bride-item"><div class="bride-ph bp1"></div><div class="bride-tag">Ada Gown · Port Harcourt</div></div>
-    <div class="bride-item"><div class="bride-ph bp2"></div><div class="bride-tag">Tumini · Lagos</div></div>
-    <div class="bride-item"><div class="bride-ph bp3"></div><div class="bride-tag">Chisom · Abuja</div></div>
-    <div class="bride-item"><div class="bride-ph bp4"></div><div class="bride-tag">Bespoke · London, UK</div></div>
-    <div class="bride-item"><div class="bride-ph bp5"></div><div class="bride-tag">Amara · Port Harcourt</div></div>
-    <div class="bride-item"><div class="bride-ph bp6"></div><div class="bride-tag">Custom · Houston, USA</div></div>
-    <div class="bride-item"><div class="bride-ph bp7"></div><div class="bride-tag">Rental · Port Harcourt</div></div>
-    <div class="bride-item"><div class="bride-ph bp8"></div><div class="bride-tag">Bespoke · Toronto, CA</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1710090411838-5f846e289b2e?w=500&q=80&auto=format&fit=crop&crop=top" alt="Bride in white gown holding bouquet" style="height:320px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Ada Gown · Port Harcourt</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1596181243306-e02a1897afb1?w=500&q=80&auto=format&fit=crop&crop=center" alt="Bride in white dress outdoors" style="height:240px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Tumini · Lagos</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1562254609-151750be7f5a?w=500&q=80&auto=format&fit=crop&crop=top" alt="Bride on staircase in gown" style="height:370px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Chisom · Abuja</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1628702165662-43fa958a87a5?w=500&q=80&auto=format&fit=crop&crop=center" alt="Bride outdoors holding bouquet" style="height:260px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Bespoke · London, UK</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1508366376044-ce8f01e223cf?w=500&q=80&auto=format&fit=crop&crop=faces" alt="Bride in forest in white gown" style="height:200px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Amara · Port Harcourt</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1722805740083-61bfe9dafdf2?w=500&q=80&auto=format&fit=crop&crop=center" alt="Bride dancing at reception" style="height:290px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Custom · Houston, USA</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1529635322560-e767888a1583?w=500&q=80&auto=format&fit=crop&crop=center" alt="Bride with veil in garden" style="height:380px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Rental · Port Harcourt</div></div>
+    <div class="bride-item"><img class="bride-ph" src="https://images.unsplash.com/photo-1517067729228-9fba1145bb3d?w=500&q=80&auto=format&fit=crop&crop=top" alt="Bride near window in gown" style="height:220px;object-fit:cover;width:100%;display:block"/><div class="bride-tag">Bespoke · Toronto, CA</div></div>
   </div>
 </section>
 
