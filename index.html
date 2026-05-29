@@ -266,6 +266,38 @@ footer{background:var(--black);padding:80px 80px 40px}
 @keyframes waPulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.35);opacity:0}}
 @keyframes particleFade{0%{opacity:0;transform:translateY(0) scale(0)}20%{opacity:.7}80%{opacity:.3}100%{opacity:0;transform:translateY(-120px) scale(.3)}}
 
+/* ── MOBILE NAV DRAWER ── */
+.mobile-nav{position:fixed;inset:0;z-index:190;pointer-events:none}
+.mobile-nav-backdrop{position:absolute;inset:0;background:rgba(13,13,13,.6);opacity:0;transition:opacity .4s ease;backdrop-filter:blur(4px)}
+.mobile-nav-drawer{position:absolute;top:0;right:0;bottom:0;width:min(320px,85vw);background:var(--white);transform:translateX(100%);transition:transform .45s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column;padding:100px 40px 48px;gap:0;box-shadow:-8px 0 40px rgba(0,0,0,.12)}
+.mobile-nav.open{pointer-events:auto}
+.mobile-nav.open .mobile-nav-backdrop{opacity:1}
+.mobile-nav.open .mobile-nav-drawer{transform:none}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:0;flex:1}
+.mobile-nav-links li{border-bottom:1px solid var(--light-gray);opacity:0;transform:translateX(20px);transition:opacity .35s ease,transform .35s ease}
+.mobile-nav.open .mobile-nav-links li:nth-child(1){opacity:1;transform:none;transition-delay:.15s}
+.mobile-nav.open .mobile-nav-links li:nth-child(2){opacity:1;transform:none;transition-delay:.2s}
+.mobile-nav.open .mobile-nav-links li:nth-child(3){opacity:1;transform:none;transition-delay:.25s}
+.mobile-nav.open .mobile-nav-links li:nth-child(4){opacity:1;transform:none;transition-delay:.3s}
+.mobile-nav.open .mobile-nav-links li:nth-child(5){opacity:1;transform:none;transition-delay:.35s}
+.mobile-nav.open .mobile-nav-links li:nth-child(6){opacity:1;transform:none;transition-delay:.4s}
+.mobile-nav-links a{display:block;padding:18px 0;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--black);text-decoration:none;transition:color .25s,padding-left .25s}
+.mobile-nav-links a:hover{color:var(--gold);padding-left:6px}
+.mobile-nav-book-wrap{margin-top:36px;opacity:0;transform:translateY(12px);transition:opacity .35s ease .45s,transform .35s ease .45s}
+.mobile-nav.open .mobile-nav-book-wrap{opacity:1;transform:none}
+.mobile-nav-book{display:block;background:var(--black);color:var(--white);text-align:center;padding:16px 32px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:background .3s}
+.mobile-nav-book:hover{background:var(--gold)}
+.mobile-nav-social{display:flex;gap:12px;margin-top:24px;opacity:0;transition:opacity .35s ease .5s}
+.mobile-nav.open .mobile-nav-social{opacity:1}
+.mobile-nav-social a{width:34px;height:34px;border:1px solid var(--light-gray);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:600;color:var(--gray);text-decoration:none;transition:all .25s}
+.mobile-nav-social a:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── HAMBURGER ANIMATED ── */
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform .35s ease,opacity .3s ease,width .3s ease}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;width:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   nav{padding:0 36px}
@@ -273,8 +305,8 @@ footer{background:var(--black);padding:80px 80px 40px}
   .col-header{padding:0 40px}
   .col-grid{padding:0 40px;grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .col-grid .dress-card:nth-child(1){grid-row:auto}
-  .col-grid .dress-card:nth-child(1) .dress-ph,.dress-ph{height:280px!important}
   .col-grid .dress-card:nth-child(4){grid-column:auto}
+  .dress-ph{height:280px!important}
   .services-grid{grid-template-columns:1fr 1fr}
   .process-layout{grid-template-columns:1fr}
   .proc-img{height:440px}
@@ -286,23 +318,51 @@ footer{background:var(--black);padding:80px 80px 40px}
 @media(max-width:768px){
   html,body{cursor:auto}
   #cursor{display:none}
-  nav{padding:0 24px}
+  :root{--nav-h:64px}
+  nav{padding:0 20px;height:var(--nav-h)}
+  .nav-logo{font-size:1.3rem}
   .nav-links{display:none}
-  .hamburger{display:flex;cursor:pointer}
-  section{padding:72px 24px}
-  .col-header{padding:0 24px;flex-direction:column;align-items:flex-start;gap:20px}
-  .col-grid{padding:0 24px;grid-template-columns:1fr;grid-template-rows:auto}
+  .hamburger{display:flex;cursor:pointer;padding:8px;margin-right:-8px;gap:5px}
+  section{padding:64px 20px}
+  #hero{min-height:100svh}
+  .hero-content{padding:0 20px}
+  .hero-ctas{flex-direction:column;align-items:center;gap:12px}
+  .hero-ctas .btn-blk,.hero-ctas .btn-ghost{width:100%;max-width:280px;text-align:center}
+  .hero-scroll{display:none}
+  #manifesto{padding:60px 20px}
+  .services-grid{grid-template-columns:1fr}
+  .svc{padding:36px 24px}
+  .col-header{padding:0 20px;flex-direction:column;align-items:flex-start;gap:16px}
+  .col-grid{padding:0 20px;grid-template-columns:1fr;grid-template-rows:auto;gap:8px}
   .col-grid .dress-card:nth-child(4){grid-column:auto}
-  .dress-ph{height:300px!important}
-  .brides-masonry{columns:2}
-  #sizing{padding:60px 24px}
-  footer{padding:60px 24px 36px}
-  .ft-top{grid-template-columns:1fr;gap:36px}
-  .ft-bottom{flex-direction:column;gap:14px;text-align:center}
-  .ft-bottom-links{gap:18px}
-  #manifesto{padding:72px 24px}
-  #book{padding:100px 24px}
+  .dress-ph{height:280px!important}
+  .brides-masonry{columns:2;column-gap:8px}
+  .brides-masonry .bride-item{margin-bottom:8px}
+  .brides-header{flex-direction:column;align-items:flex-start;gap:16px}
+  #sizing{padding:56px 20px;flex-direction:column;text-align:center}
+  .sizing-btns{width:100%}
+  .btn-gold,.btn-woutline{width:100%;max-width:300px;display:block}
+  .process-layout{gap:40px}
+  .proc-img{height:300px}
+  .proc-badge{right:0;bottom:-12px;padding:20px 16px;font-size:.85rem;max-width:130px}
+  .faq-grid{grid-template-columns:1fr;gap:40px}
+  #book{padding:80px 20px}
+  .book-ctas{flex-direction:column;align-items:center;gap:12px}
+  .book-ctas .btn-blk,.book-ctas .btn-ghost{width:100%;max-width:280px;text-align:center}
+  footer{padding:56px 20px 32px}
+  .ft-top{grid-template-columns:1fr;gap:32px}
+  .ft-bottom{flex-direction:column;gap:10px;text-align:center}
+  .ft-bottom-links{gap:16px;flex-wrap:wrap;justify-content:center}
+  .ft-credit{order:-1}
   .book-ring::before,.book-ring::after{display:none}
+  .testi-wrap{min-height:260px}
+  .testi-q{font-size:1.1rem}
+  .hero-eyebrow{font-size:.58rem;letter-spacing:.22em}
+  .col-header .btn-ghost{width:100%}
+}
+@media(max-width:400px){
+  .brides-masonry{columns:1}
+  .hero-h1{font-size:3rem}
 }
 </style>
 </head>
@@ -335,10 +395,32 @@ footer{background:var(--black);padding:80px 80px 40px}
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#book" class="nav-book">Book a Fitting</a></li>
   </ul>
-  <button class="hamburger" id="ham" aria-label="Menu">
+  <button class="hamburger" id="ham" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-backdrop" id="mobileBackdrop"></div>
+  <div class="mobile-nav-drawer" role="dialog" aria-label="Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#process">Our Process</a></li>
+      <li><a href="#brides">Real Brides</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="mobile-nav-book-wrap">
+      <a href="#book" class="mobile-nav-book">Book a Fitting</a>
+      <div class="mobile-nav-social">
+        <a href="https://www.instagram.com/giabridals" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.tiktok.com/@giabridals" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
+        <a href="https://wa.me/2340000000000" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -665,6 +747,45 @@ function startWordAnim(){
     },2200+i*120);
   });
 }
+
+// ── MOBILE NAV ──
+const ham=document.getElementById('ham');
+const mobileNav=document.getElementById('mobileNav');
+const mobileBackdrop=document.getElementById('mobileBackdrop');
+let navOpen=false;
+function openNav(){
+  navOpen=true;
+  mobileNav.classList.add('open');
+  mobileNav.setAttribute('aria-hidden','false');
+  ham.classList.add('open');
+  ham.setAttribute('aria-expanded','true');
+  ham.setAttribute('aria-label','Close menu');
+  document.body.style.overflow='hidden';
+}
+function closeNav(){
+  navOpen=false;
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden','true');
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
+  ham.setAttribute('aria-label','Open menu');
+  document.body.style.overflow='';
+}
+ham.addEventListener('click',()=>navOpen?closeNav():openNav());
+mobileBackdrop.addEventListener('click',closeNav);
+document.querySelectorAll('.mobile-nav-links a, .mobile-nav-book').forEach(a=>{
+  a.addEventListener('click',()=>{
+    closeNav();
+    const href=a.getAttribute('href');
+    if(href&&href.startsWith('#')){
+      setTimeout(()=>{
+        const t=document.querySelector(href);
+        if(t)window.scrollTo({top:t.offsetTop-64,behavior:'smooth'});
+      },300);
+    }
+  });
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navOpen)closeNav()});
 
 // ── SCROLL PROGRESS ──
 const prog=document.getElementById('progress');
