@@ -489,3 +489,8 @@ a,button,.faq-q,.hamburger{-webkit-tap-highlight-color:transparent}
 
 /* Respect notch / home-indicator safe areas for the floating WhatsApp button */
 .wa{bottom:max(24px,env(safe-area-inset-bottom));right:max(20px,env(safe-area-inset-right))}
+
+
+/* ── HERO VIDEO (covers hero-bg; poster = fallback image) ── */
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;background:var(--black)}
+@media (prefers-reduced-motion:reduce){.hero-video{display:none}}
