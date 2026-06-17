@@ -426,3 +426,66 @@ body.subpage nav{background:rgba(255,255,255,.96);box-shadow:0 1px 0 rgba(0,0,0,
   .vs-cta{align-items:center}
   .vs-text{min-width:0}
 }
+
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE & MOBILE REFINEMENTS
+   ════════════════════════════════════════════════════════ */
+
+/* Media never forces horizontal scroll */
+img,svg,video,iframe,canvas{max-width:100%}
+.vs-text,.loc-info,.ft-col,.mobile-nav-drawer{min-width:0}
+.ft-p a,.loc-line a,.mobile-nav-social a,.book-ctas a{overflow-wrap:anywhere}
+
+/* Fixed-nav offset so anchor jumps (#visit, #process…) aren't hidden under the bar */
+html{scroll-padding-top:96px}
+
+/* Touch devices: restore the real cursor (custom cursor is hidden) regardless of width */
+@media (hover:none),(pointer:coarse){
+  html,body,*{cursor:auto}
+  #cursor{display:none}
+}
+a,button,.faq-q,.hamburger{-webkit-tap-highlight-color:transparent}
+
+/* Collapse top nav into the drawer earlier (small tablets / large phones) */
+@media(max-width:880px){
+  .nav-links{display:none}
+  .hamburger{display:flex;cursor:pointer;padding:8px;margin-right:-8px}
+}
+
+/* Small tablets / large phones */
+@media(max-width:600px){
+  html{scroll-padding-top:76px}
+  .sec-h{font-size:clamp(1.9rem,7vw,2.4rem)}
+  .page-hero-h{font-size:clamp(2.2rem,9vw,3rem)}
+  .cta-band-h{font-size:clamp(1.7rem,7vw,2.3rem)}
+  .book-h{font-size:clamp(1.9rem,8vw,2.6rem)}
+  .loc-h{font-size:clamp(1.8rem,7.5vw,2.4rem)}
+  .manifesto-q{font-size:clamp(1.4rem,6vw,1.9rem)}
+  .vs-addr{font-size:1.2rem}
+  .loc-map,.loc-map iframe{min-height:300px}
+}
+
+/* Phones */
+@media(max-width:430px){
+  section{padding:56px 16px}
+  #manifesto{padding:52px 16px}
+  #sizing{padding:48px 16px}
+  #book{padding:64px 16px}
+  #brides,#testimonials,#faq{padding:56px 16px}
+  .page-hero{padding:calc(var(--nav-h) + 36px) 16px 40px}
+  .cta-band{padding:56px 16px}
+  .visit-strip{padding:40px 16px}
+  .loc-info{padding:52px 18px}
+  .col-header,.col-grid{padding:0 16px}
+  footer{padding:48px 16px 28px}
+  .hero-h1{font-size:clamp(2.6rem,12vw,3.2rem)}
+  .hero-sub{font-size:.82rem}
+  .nav-logo{font-size:1.18rem}
+  .btn-blk,.btn-ghost,.btn-gold,.btn-woutline{padding:14px 26px;font-size:.62rem;letter-spacing:.16em}
+  .loc-line{flex-direction:column;gap:3px}
+  .loc-k{padding-top:0}
+}
+
+/* Respect notch / home-indicator safe areas for the floating WhatsApp button */
+.wa{bottom:max(24px,env(safe-area-inset-bottom));right:max(20px,env(safe-area-inset-right))}
