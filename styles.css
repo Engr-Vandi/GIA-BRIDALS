@@ -404,3 +404,25 @@ body.subpage nav{background:rgba(255,255,255,.96);box-shadow:0 1px 0 rgba(0,0,0,
   .loc-info{padding:64px 24px}
   .loc-map,.loc-map iframe{min-height:340px}
 }
+
+
+/* ── VISIT STRIP (home) ── */
+.visit-strip{background:var(--cream);padding:64px 80px;border-top:1px solid var(--light-gray)}
+.vs-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:36px;flex-wrap:wrap;justify-content:space-between}
+.vs-pin{flex:0 0 auto;width:54px;height:54px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,.06)}
+.vs-pin svg{width:24px;height:24px;fill:none;stroke:var(--gold);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.vs-text{flex:1 1 auto;min-width:240px}
+.vs-text .lbl{margin-bottom:8px}
+.vs-addr{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--black);line-height:1.4}
+.vs-phone{margin-top:6px;font-size:.85rem;font-weight:300;color:var(--charcoal)}
+.vs-phone a{color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--gold);transition:color .3s}
+.vs-phone a:hover{color:var(--gold)}
+.vs-cta{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.vs-link{font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:color .3s}
+.vs-link:hover{color:var(--gold-deep)}
+@media(max-width:768px){
+  .visit-strip{padding:48px 24px}
+  .vs-inner{flex-direction:column;text-align:center;gap:24px}
+  .vs-cta{align-items:center}
+  .vs-text{min-width:0}
+}
