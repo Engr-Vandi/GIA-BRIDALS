@@ -73,6 +73,18 @@ if(prog){
 const nav=document.getElementById('nav');
 if(nav)window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
 
+// ── HERO VIDEO (robust autoplay: iOS/Android) ──
+const heroVideo=document.getElementById('heroVideo');
+if(heroVideo){
+  heroVideo.muted=true;
+  const tryPlay=()=>{const r=heroVideo.play();if(r&&r.catch)r.catch(()=>{});};
+  heroVideo.addEventListener('loadeddata',tryPlay);
+  tryPlay();
+  const kick=()=>{tryPlay();window.removeEventListener('touchstart',kick);window.removeEventListener('click',kick);};
+  window.addEventListener('touchstart',kick,{passive:true});
+  window.addEventListener('click',kick);
+}
+
 // ── HERO PARALLAX (home only) ──
 const heroBg=document.getElementById('heroBg');
 if(heroBg){
@@ -102,38 +114,6 @@ if(curDot&&curRing){
     el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
   });
-}
-
-// ── HERO PARTICLES (home only) ──
-const canvas=document.getElementById('particles');
-if(canvas){
-  const ctx=canvas.getContext('2d');
-  let particles=[];
-  const resizeCanvas=()=>{canvas.width=innerWidth;canvas.height=innerHeight;};
-  resizeCanvas();window.addEventListener('resize',resizeCanvas);
-  const spawnParticle=()=>{
-    particles.push({
-      x:Math.random()*canvas.width,y:canvas.height*(.4+Math.random()*.4),
-      r:Math.random()*2+.5,life:0,maxLife:120+Math.random()*80,
-      vx:(Math.random()-.5)*.4,vy:-(Math.random()*.6+.3),
-      color:`rgba(201,169,110,${Math.random()*.5+.2})`
-    });
-  };
-  const drawParticles=()=>{
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    if(Math.random()<.08)spawnParticle();
-    particles=particles.filter(p=>{
-      p.life++;p.x+=p.vx;p.y+=p.vy;
-      const progress=p.life/p.maxLife;
-      const alpha=progress<.2?progress/.2:progress>.8?(1-progress)/.2:1;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle=p.color.replace(/[\d.]+\)$/,`${alpha*.6})`);
-      ctx.fill();
-      return p.life<p.maxLife;
-    });
-    requestAnimationFrame(drawParticles);
-  };
-  setTimeout(drawParticles,loader?1800:0);
 }
 
 // ── SCROLL REVEAL ──
