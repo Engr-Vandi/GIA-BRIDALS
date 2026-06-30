@@ -83,6 +83,24 @@ if(heroVideo){
   const kick=()=>{tryPlay();window.removeEventListener('touchstart',kick);window.removeEventListener('click',kick);};
   window.addEventListener('touchstart',kick,{passive:true});
   window.addEventListener('click',kick);
+
+  // ── PAUSE / PLAY TOGGLE ──
+  const heroVidBtn=document.getElementById('heroVidBtn');
+  if(heroVidBtn){
+    const syncBtn=()=>{
+      const paused=heroVideo.paused;
+      heroVidBtn.classList.toggle('is-paused',paused);
+      heroVidBtn.setAttribute('aria-pressed',String(paused));
+      heroVidBtn.setAttribute('aria-label',paused?'Play background video':'Pause background video');
+    };
+    heroVidBtn.addEventListener('click',(e)=>{
+      e.stopPropagation();
+      if(heroVideo.paused)tryPlay();else heroVideo.pause();
+    });
+    heroVideo.addEventListener('play',syncBtn);
+    heroVideo.addEventListener('pause',syncBtn);
+    syncBtn();
+  }
 }
 
 // ── HERO PARALLAX (home only) ──
