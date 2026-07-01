@@ -492,8 +492,8 @@ a,button,.faq-q,.hamburger{-webkit-tap-highlight-color:transparent}
 /* ── HERO VIDEO (covers hero-bg; poster = fallback image) ── */
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;background:var(--black)}
 @media (prefers-reduced-motion:reduce){.hero-video{display:none}}
-.hero-vid-btn{position:relative;z-index:3;margin:34px auto 0;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,.9);border-radius:50%;background:rgba(0,0,0,.55);color:#fff;cursor:pointer;backdrop-filter:blur(4px);box-shadow:0 2px 16px rgba(0,0,0,.5);opacity:0;animation:fadeUp 1s ease 3.2s forwards;transition:background .25s,border-color .25s,transform .25s}
-.hero-vid-btn:hover{background:rgba(0,0,0,.75);border-color:#fff;transform:scale(1.08)}
+.hero-vid-btn{position:absolute;bottom:24px;right:24px;z-index:3;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.5);border-radius:50%;background:rgba(0,0,0,.35);color:#fff;cursor:pointer;backdrop-filter:blur(4px);transition:background .25s,border-color .25s,opacity .25s}
+.hero-vid-btn:hover{background:rgba(0,0,0,.6);border-color:#fff}
 .hero-vid-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .hero-vid-btn svg{width:20px;height:20px;fill:currentColor}
 .hero-vid-btn .icon-play{display:none}
