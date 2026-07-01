@@ -49,7 +49,7 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 1px 0 rgba(0,0,0,.07)
 #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--black)}
 .hero-bg{position:absolute;inset:0;background-image:url('dress3-4.jpg');background-size:cover;background-position:center 30%;will-change:transform}
 .hero-overlay{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 78% 62% at 50% 46%,rgba(0,0,0,.55) 0%,rgba(0,0,0,.30) 48%,rgba(0,0,0,0) 78%)}
-.hero-content{position:relative;z-index:1;text-align:center;padding:0 40px;max-width:880px}
+.hero-content{position:relative;z-index:1;text-align:center;padding:0 40px;max-width:880px;margin:0 auto}
 .hero-eyebrow{font-size:.65rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;opacity:0;animation:fadeUp .8s ease 2s forwards;text-shadow:0 1px 10px rgba(0,0,0,.45)}
 .hero-rule{width:0px;height:1px;background:var(--gold);margin:22px auto;transition:width 1s var(--ease);opacity:0;animation:ruleExpand 1s ease 2.2s forwards}
 .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,8.5vw,7.6rem);font-weight:300;line-height:.92;letter-spacing:-.02em;color:var(--white);margin-bottom:14px;text-shadow:0 2px 28px rgba(0,0,0,.55)}
