@@ -73,18 +73,16 @@ if(prog){
 const nav=document.getElementById('nav');
 if(nav)window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
 
-// ── HERO VIDEO (robust autoplay: iOS/Android) ──
+// ── HERO VIDEO (loops; play/pause controlled ONLY by the button) ──
 const heroVideo=document.getElementById('heroVideo');
 if(heroVideo){
   heroVideo.muted=true;
   const tryPlay=()=>{const r=heroVideo.play();if(r&&r.catch)r.catch(()=>{});};
-  heroVideo.addEventListener('loadeddata',tryPlay);
+  // Start playing on load; after that, only the button changes play/pause state.
+  heroVideo.addEventListener('loadeddata',tryPlay,{once:true});
   tryPlay();
-  const kick=()=>{tryPlay();window.removeEventListener('touchstart',kick);window.removeEventListener('click',kick);};
-  window.addEventListener('touchstart',kick,{passive:true});
-  window.addEventListener('click',kick);
 
-  // ── PAUSE / PLAY TOGGLE ──
+  // ── PAUSE / PLAY TOGGLE (the only control) ──
   const heroVidBtn=document.getElementById('heroVidBtn');
   if(heroVidBtn){
     const syncBtn=()=>{
@@ -93,8 +91,7 @@ if(heroVideo){
       heroVidBtn.setAttribute('aria-pressed',String(paused));
       heroVidBtn.setAttribute('aria-label',paused?'Play background video':'Pause background video');
     };
-    heroVidBtn.addEventListener('click',(e)=>{
-      e.stopPropagation();
+    heroVidBtn.addEventListener('click',()=>{
       if(heroVideo.paused)tryPlay();else heroVideo.pause();
     });
     heroVideo.addEventListener('play',syncBtn);
