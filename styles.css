@@ -541,3 +541,17 @@ body.lb-open{overflow:hidden}
 .lb-nav:hover{border-color:var(--gold-pale);background:rgba(0,0,0,.5)}
 .lb-prev{left:22px}.lb-next{right:22px}
 @media(max-width:860px){.lb-prev{left:10px}.lb-next{right:10px}.lb-nav{width:44px;height:44px;font-size:1.3rem}}
+
+
+/* ── SKIP LINK (a11y) ── */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:10001;background:var(--black);color:var(--gold-pale);padding:12px 22px;font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.skip-link:focus{left:0}
+
+/* ── LEGAL / POLICY PAGES ── */
+.legal-wrap{max-width:760px;margin:0 auto;padding:64px 24px 96px}
+.legal-wrap h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.6rem;color:var(--black);margin:44px 0 14px}
+.legal-wrap h2:first-child{margin-top:0}
+.legal-wrap p,.legal-wrap li{font-family:'Raleway',sans-serif;font-weight:300;font-size:.9rem;line-height:1.95;color:var(--charcoal);margin:0 0 14px}
+.legal-wrap ul{padding-left:22px;margin:0 0 14px}
+.legal-wrap a{color:var(--gold-deep)}
+.legal-updated{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-bottom:36px}
