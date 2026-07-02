@@ -21,7 +21,7 @@ body{font-family:'Raleway',sans-serif;background:var(--white);color:var(--black)
 #progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:9998;width:0%;transition:width .1s linear}
 
 /* ── CUSTOM CURSOR ── */
-#cursor{position:fixed;top:0;left:0;z-index:9997;pointer-events:none;mix-blend-mode:difference}
+#cursor{position:fixed;top:0;left:0;z-index:10000;pointer-events:none;mix-blend-mode:difference}
 .cur-ring{width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:transform .12s var(--ease),width .3s var(--ease),height .3s var(--ease),opacity .3s ease;opacity:0}
 .cur-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:transform .06s linear}
 body.cursor-ready .cur-ring{opacity:1}
