@@ -49,6 +49,7 @@
     <li><a href="services.html">Services</a></li>
     <li><a href="collections.html">Collections</a></li>
     <li><a href="process.html">Our Process</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="booking.html" class="nav-book active">Book an Appointment</a></li>
   </ul>
   <button class="hamburger" id="ham" aria-label="Open menu" aria-expanded="false">
@@ -66,6 +67,7 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="collections.html">Collections</a></li>
       <li><a href="process.html">Our Process</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
     <div class="mobile-nav-book-wrap">
       <a href="booking.html" class="mobile-nav-book">Book an Appointment</a>
@@ -91,11 +93,58 @@
   <div class="book-ring"></div>
   <div class="book-bg">Gia</div>
   <div class="book-inner reveal">
-    <p class="book-p">Book a free, no-pressure consultation — in person in Port Harcourt or virtual from anywhere in the world. We'll talk through your dream dress and exactly how we'll bring it to life.</p>
-    <div class="book-ctas">
-      <a href="https://wa.me/2348036729036?text=Hello%20Gia%20Bridals%21%20I%27d%20like%20to%20book%20an%20appointment.%0A%0AName%3A%20%0AService%20%28Bespoke%20/%20Custom%20/%20Rental%29%3A%20%0AEvent%20date%3A%20%0ACity%20/%20Country%3A%20" target="_blank" rel="noopener" class="btn-blk">Book via WhatsApp</a>
-      <a href="mailto:Info@giabridals.com?subject=Booking%20Request%20%E2%80%94%20Gia%20Bridals&body=Hello%20Gia%20Bridals%21%20I%27d%20like%20to%20book%20an%20appointment.%0A%0AName%3A%20%0AService%20%28Bespoke%20/%20Custom%20/%20Rental%29%3A%20%0AEvent%20date%3A%20%0ACity%20/%20Country%3A%20" class="btn-ghost">Send an Email</a>
-    </div>
+    <p class="book-p">Book a free, no-pressure consultation — in person in Port Harcourt or virtual from anywhere in the world. Fill in your details below and we'll take it from there.</p>
+    <form class="bk-form" id="bkForm" novalidate>
+      <div class="bk-grid">
+        <div class="bk-field">
+          <label for="bkName">Full Name <span class="req">*</span></label>
+          <input type="text" id="bkName" name="name" autocomplete="name" required placeholder="Your full name"/>
+        </div>
+        <div class="bk-field">
+          <label for="bkPhone">Phone / WhatsApp <span class="req">*</span></label>
+          <input type="tel" id="bkPhone" name="phone" autocomplete="tel" required placeholder="e.g. 0803 000 0000"/>
+        </div>
+        <div class="bk-field">
+          <label for="bkEmail">Email</label>
+          <input type="email" id="bkEmail" name="email" autocomplete="email" placeholder="you@example.com"/>
+        </div>
+        <div class="bk-field">
+          <label for="bkService">Service <span class="req">*</span></label>
+          <select id="bkService" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option>Bespoke Gown</option>
+            <option>Custom Order</option>
+            <option>Rental</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="bk-field">
+          <label for="bkType">Appointment Type <span class="req">*</span></label>
+          <select id="bkType" name="type" required>
+            <option value="" disabled selected>Select type</option>
+            <option>In person — Port Harcourt</option>
+            <option>Virtual — video call</option>
+          </select>
+        </div>
+        <div class="bk-field">
+          <label for="bkDate">Wedding / Event Date</label>
+          <input type="date" id="bkDate" name="date"/>
+        </div>
+        <div class="bk-field full">
+          <label for="bkCity">City &amp; Country</label>
+          <input type="text" id="bkCity" name="city" placeholder="e.g. Port Harcourt, Nigeria"/>
+        </div>
+        <div class="bk-field full">
+          <label for="bkNotes">Tell Us About Your Dream Dress</label>
+          <textarea id="bkNotes" name="notes" placeholder="Silhouette, inspiration, anything you'd like us to know…"></textarea>
+        </div>
+      </div>
+      <div class="bk-actions">
+        <button type="submit" class="btn-blk">Book via WhatsApp</button>
+        <button type="button" class="btn-ghost" id="bkEmailBtn">Send by Email Instead</button>
+      </div>
+      <p class="bk-note">Submitting opens WhatsApp (or your email app) with your details already filled in — nothing is sent until you press send there.</p>
+    </form>
   </div>
 </section>
 
@@ -103,7 +152,7 @@
 <!-- LOCATION -->
 <section class="location" id="visit">
   <div class="loc-info reveal-left">
-    <span class="lbl">Visit the Atelier</span>
+    <span class="lbl">Visit the Store</span>
     <div class="gold-line"></div>
     <h2 class="loc-h">Find Us in <em>Port Harcourt</em></h2>
     <p class="loc-line"><span class="loc-k">Address</span><span>Suit 5, Menji Plaza, 79 Tombia St, New GRA, Port Harcourt 500272, Rivers</span></p>
@@ -147,6 +196,7 @@
         <li><a href="process.html">Our Process</a></li>
         <li><a href="index.html#brides">Real Brides</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="#book">Book an Appointment</a></li>
       </ul>
     </div>
@@ -172,6 +222,39 @@
 </a>
 
 <script src="main.js"></script>
+<script>
+(function(){
+  var f = document.getElementById('bkForm');
+  if (!f) return;
+  function val(id){ var el = document.getElementById(id); return (el && el.value ? el.value : '').trim(); }
+  function message(){
+    var lines = [
+      "Hello Gia Bridals! I'd like to book an appointment.",
+      "",
+      "Name: " + val('bkName'),
+      "Phone / WhatsApp: " + val('bkPhone'),
+      "Email: " + (val('bkEmail') || '-'),
+      "Service: " + val('bkService'),
+      "Appointment type: " + val('bkType'),
+      "Wedding / event date: " + (val('bkDate') || '-'),
+      "City / Country: " + (val('bkCity') || '-')
+    ];
+    var notes = val('bkNotes');
+    if (notes) lines.push("About the dress: " + notes);
+    return lines.join("\n");
+  }
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!f.reportValidity()) return;
+    window.open('https://wa.me/2348036729036?text=' + encodeURIComponent(message()), '_blank', 'noopener');
+  });
+  document.getElementById('bkEmailBtn').addEventListener('click', function(){
+    if (!f.reportValidity()) return;
+    location.href = 'mailto:Info@giabridals.com?subject=' + encodeURIComponent('Booking Request — Gia Bridals')
+      + '&body=' + encodeURIComponent(message());
+  });
+})();
+</script>
 </body>
 </html>
 
