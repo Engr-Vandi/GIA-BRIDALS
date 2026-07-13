@@ -5,8 +5,8 @@
   --gold:#C9A96E;--gold-pale:#EAD9BE;--gold-deep:#A07840;
   --nav-h:80px;--ease:cubic-bezier(.25,.46,.45,.94);
 }
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;cursor:none}
-body{font-family:'Raleway',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;cursor:none}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;cursor:none;overflow-x:hidden}
+body{font-family:'Raleway',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;cursor:none;position:relative;width:100%}
 
 /* ── PAGE LOADER ── */
 #loader{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .7s ease,visibility .7s ease}
