@@ -620,3 +620,12 @@ body.lb-open{overflow:hidden}
 
 /* ── SOCIAL BRAND ICONS ── */
 .soc-a svg,.mobile-nav-social a svg{width:15px;height:15px;fill:currentColor;display:block}
+
+
+/* ── NAV PHONE ── */
+.nav-phone{display:inline-flex;align-items:center;gap:7px;color:var(--gold-deep)!important;font-weight:600;white-space:nowrap}
+.nav-phone svg{width:13px;height:13px;fill:currentColor;flex:0 0 auto}
+@media(max-width:1200px){.nav-phone-li{display:none}}
+.mobile-nav-phone{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:12px;border:1px solid var(--gold);color:var(--gold-deep);padding:14px 32px;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s}
+.mobile-nav-phone svg{width:14px;height:14px;fill:currentColor;flex:0 0 auto}
+.mobile-nav-phone:hover{background:var(--gold);color:var(--white)}
